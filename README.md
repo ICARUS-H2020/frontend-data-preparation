@@ -1,5 +1,9 @@
 # ICARUS
 
+## Requirements
+
+The icarus-backend is needed, in order to run this component locally.
+
 ## Project setup
 
 Run:
