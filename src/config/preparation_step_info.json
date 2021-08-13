@@ -1,0 +1,66 @@
+{
+    "count": {
+        "label": "Count",
+        "description": "Get the number of columns",
+        "parameters": {}
+    },
+    "distinct": {
+        "label": "Distinct",
+        "description": "Get distinct values of selected column",
+        "parameters": {
+            "col_a": {
+                "label": "Input Column",
+                "description": "Column to extract distinct values.",
+                "type": "column",
+                "parent_parameter": null,
+                "facets": {
+                    "multiple": false,
+                    "filter": [],
+                    "validation": "required"
+                }
+            }
+        }
+    },
+    "numeric_stats": {
+        "label": "Numeric stats",
+        "description": "Get numeric stats of selected column(s)",
+        "parameters": {
+            "col_a": {
+                "label": "Input Column(s)",
+                "description": "Column to get numeric stats.",
+                "type": "column",
+                "parent_parameter": null,
+                "facets": {
+                    "multiple": true,
+                    "filter": [
+                        "double",
+                        "integer"
+                    ],
+                    "validation": "required"
+                }
+            }
+        }
+    },
+    "nulls": {
+        "label": "Nulls count",
+        "description": "Get number of nulls for selected column(s)",
+        "parameters": {
+            "col_a": {
+                "label": "Input Column(s)",
+                "description": "Column to get number of nulls.",
+                "type": "column",
+                "parent_parameter": null,
+                "facets": {
+                    "multiple": true,
+                    "filter": [],
+                    "validation": "required"
+                }
+            }
+        }
+    },
+    "previewResults": {
+        "label": "Preview Results",
+        "description": "Get a random selection of very few rows of the dataset",
+        "parameters": {}
+    }
+}

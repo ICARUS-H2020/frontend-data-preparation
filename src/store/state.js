@@ -1,0 +1,35 @@
+export default {
+    user: null,
+    organization: null,
+    signedIn: false,
+    csrf: null,
+    notifications: [],
+
+    subtitle: '',
+    dataModel: null,
+    flatModel: null,
+    modelVersion: 'v1.10',
+
+    headercolor: null,
+    pagecolor: 'bg-icarus-blue text-lighter',
+    sidebarcolor: 'bg-night-sky text-lighter',
+
+    favoritesFiltersVisible: false,
+    favoritesFiltersObject: {
+        title: null,
+        tags: null,
+        category: null,
+        standards: null,
+        temporalCoverage: null,
+        spatialCoverage: [],
+        dataAssetProvider: null,
+        relatedDatasets: null,
+        licenses: [],
+        items: 'Datasets',
+        status: 'All',
+        sortBy: 'date_created',
+        page: 0,
+    },
+    copiedConcept: null,
+    favoritesItems: [],
+};

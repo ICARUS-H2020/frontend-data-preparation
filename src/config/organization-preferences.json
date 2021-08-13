@@ -1,0 +1,30 @@
+{
+    "notifications": [
+        {
+            "label": "datasets",
+            "description": "Information about new datasets in the following categories",
+            "categories": [1, 2, 3, 4, 5, 6, 7, 8],
+            "notifications": true,
+            "email": true,
+            "target": 0
+        },
+        {
+            "label": "contracts",
+            "description": "Contract updates and requests",
+            "notifications": true,
+            "email": true
+        },
+        {
+            "label": "data-check-in",
+            "description": "Status updates for data check-in jobs",
+            "notifications": true,
+            "email": true
+        },
+        {
+            "label": "analytics",
+            "description": "Status updates for analytic jobs",
+            "notifications": true,
+            "email": true
+        }
+    ]
+}

@@ -1,0 +1,3748 @@
+{
+  "add": {
+    "label": "Create new column(s)",
+    "description": "Create new columns by applying operations on existing data.",
+    "output": "Provide a title for the new column",
+    "validation": "No idea what you want me to do here!!!!!",
+    "functions": {
+      "year": {
+        "label": "Year",
+        "description": "Extract year from the selected datetime/date column.",
+        "category": "timestamp",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to extract year. Showing only date & datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime",
+                "date"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "month": {
+        "label": "Month",
+        "description": "Extract month (as number) from the selected datetime/date column.",
+        "category": "timestamp",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to extract month. Showing only date & datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime",
+                "date"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "day_of_month": {
+        "label": "Day of Month",
+        "description": "Extract day of month from the selected datetime/date column.",
+        "category": "timestamp",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to extract day of month. Showing only date & datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime",
+                "date"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "day_of_week": {
+        "label": "Day of Week",
+        "description": "Extract day of week from the selected datetime/date column. Values: 1-7 (1 = Monday).",
+        "category": "timestamp",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to extract day of week. Showing only date & datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime",
+                "date"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "date": {
+        "label": "Date",
+        "description": "Extract date from the selected datetime column.",
+        "category": "timestamp",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to extract date. Showing only datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "isWeekday": {
+        "label": "Is Weekday",
+        "description": "Indicate whether provided datetime/date is of a week day (vs weekend). Values: 0 if weekend, 1 otherwise.",
+        "category": "timestamp",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get input date/datetime. Showing only date & datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime",
+                "date"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "time": {
+        "label": "Time",
+        "description": "Extract time from the selected datetime column. Output format: HH:MM:SS.",
+        "category": "timestamp",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to extract time. Showing only datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "hourRound": {
+        "label": "Hour",
+        "description": "Extract rounded hour from the selected datetime column. e.g. Both 9:10 and 9:35 are rounded as 9.",
+        "category": "timestamp",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to extract rounded hour. Showing only datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "hourRoundCorrected": {
+        "label": "Hour - 'corrected'",
+        "description": "Extract 'corrected' rounded hour from the selected datetime column. e.g. 9:10 is rounded as 9, but 9:35 is rounded as 10.",
+        "category": "timestamp",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to extract 'corrected' rounded hour. Showing only datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "date_trunc_generic": {
+        "label": "Datetime Truncation",
+        "description": "Truncate datetime to specified time interval unit. e.g. truncating 2014-05-01 03:23:34.000 in 'day' unit will produce 2014-05-01 00:00:00.000 as output.",
+        "category": "timestamp",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get input date/datetime. Showing only date & datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime",
+                "date"
+              ],
+              "validation": "required"
+            }
+          },
+          "interval": {
+            "label": "Time Interval Unit",
+            "description": "Time interval unit to perform truncation",
+            "type": "enum",
+            "parent_parameter": null,
+            "options": [
+              "year",
+              "quarter",
+              "month",
+              "week",
+              "day",
+              "hour",
+              "minute"
+            ],
+            "facets": {
+              "multiple": false,
+              "filter": null,
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "date_trunc_hourly_corrected": {
+        "label": "Datetime Truncation to 'corrected' hour",
+        "description": "Truncate datetime to 'corrected' hour interval unit. (Note: 'corrected' hour means that 9:10 is rounded as 9, but 9:35 is rounded as 10.)",
+        "category": "timestamp",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get input datetime. Showing only datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "subtract": {
+        "label": "Date Subtraction",
+        "description": "Subtract two datetime columns and get result in minutes.",
+        "category": "timestamp",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column A (to subtract from)",
+            "description": "Column from which to subtract. Showing only datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime"
+              ],
+              "validation": "required"
+            }
+          },
+          "col_b": {
+            "label": "Input Column B (to be subtracted from A)",
+            "description": "Column to be subtracted. Showing only datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "abs": {
+        "label": "Absolute Value",
+        "description": "Get absolute value of input column values.",
+        "category": "math",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column on which to apply abs function. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "double",
+                "integer"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "ceiling": {
+        "label": "Ceiling Value",
+        "description": "Get the ceiling of input column values.",
+        "category": "math",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column on which to apply ceiling function. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "double"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "floor": {
+        "label": "Floor Value",
+        "description": "Get the floor of input column values.",
+        "category": "math",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column on which to apply floor function. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "double"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "round": {
+        "label": "Rounded Value",
+        "description": "Get rounded value of input column values to selected decimal points.",
+        "category": "math",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column on which to apply round function. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "double"
+              ],
+              "validation": "required"
+            }
+          },
+          "digits": {
+            "label": "Decimal Points",
+            "description": "Number of decimal points for the rounded number.",
+            "type": "numeric",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "integer"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "cols_operation": {
+        "label": "Column-Column Operation",
+        "description": "Apply a math operation between two columns.",
+        "category": "math",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column A",
+            "description": "Column used as the first (left-hand side) operand of the math function. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "double",
+                "integer"
+              ],
+              "validation": "required"
+            }
+          },
+          "operator": {
+            "label": "Operator",
+            "description": "Math operator to apply between the two operands.",
+            "type": "enum",
+            "parent_parameter": null,
+            "options": [
+              "plus",
+              "minus",
+              "mul",
+              "div"
+            ],
+            "facets": {
+              "multiple": false,
+              "filter": null,
+              "validation": "required"
+            }
+          },
+          "col_b": {
+            "label": "Input Column B",
+            "description": "Column used as the second (right-hand side) operand of the math function. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "double",
+                "integer"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "col_val_operation": {
+        "label": "Column-Value Operation",
+        "description": "Apply a math operation between a column and a value.",
+        "category": "math",
+        "parameters": {
+          "col_a": {
+            "label": "Column",
+            "description": "Column used as the first (left-hand side) operand of the math function. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "double",
+                "integer"
+              ],
+              "validation": "required"
+            }
+          },
+          "operator": {
+            "label": "Operator",
+            "description": "Math operator to apply between the two operands.",
+            "type": "enum",
+            "parent_parameter": null,
+            "options": [
+              "plus",
+              "minus",
+              "mul",
+              "div"
+            ],
+            "facets": {
+              "multiple": false,
+              "filter": null,
+              "validation": "required"
+            }
+          },
+          "val": {
+            "label": "Value",
+            "description": "Value used as the second (right-hand side) operand of the math function. ",
+            "type": "numeric",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "double",
+                "integer"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "iata_season": {
+        "label": "IATA Season",
+        "description": "Extract the IATA season of the specified date/datetime. Current implementation is approximate.",
+        "category": "conditional",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to extract season. Showing only date/datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime",
+                "date"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "taxi_time_groups_binary": {
+        "label": "Taxi-time Groups (2)",
+        "description": "Extract taxi time groups (binary): 1:>9 minutes, else 0.",
+        "category": "conditional",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get aircraft taxi time duration in minutes. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "integer",
+                "double"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "taxi_time_groups_multiple": {
+        "label": "Taxi-time Groups (3)",
+        "description": "Extract taxi time groups (multiple): 2:>=15 minutes, 1:between 9 and 15 mins, else 0.",
+        "category": "conditional",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get aircraft taxi time duration in minutes. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "integer",
+                "double"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "flight_delay_groups_three": {
+        "label": "Flight Delay Groups (3)",
+        "description": "Extract flight delay groups: 2:>=60 minutes, 1:between 10 and 60 mins, else 0.",
+        "category": "conditional",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get flight delay in minutes. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "integer",
+                "double"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "day_intervals_four": {
+        "label": "Day Time Intervals (4)",
+        "description": "Extract day interval based on the datetime hour: Outputs:0-3. Corresponding hour thresholds:0-6, 6-12, 12-18, 18-24.",
+        "category": "conditional",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get datetime and 'assign' time intervals. Showing only datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "day_intervals_six": {
+        "label": "Day Time Intervals (6)",
+        "description": "Extract day interval based on the datetime hour: Outputs:0-5. Corresponding hour thresholds:0-4, 4-8, 8-12, 12-16, 16-20, 20-24.",
+        "category": "conditional",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get datetime and 'assign' time intervals. Showing only datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "max_age_fix": {
+        "label": "Correct maximum age",
+        "description": "Make maximum age equal to 100 when minimum age exists and maximum age is null.",
+        "category": "conditional",
+        "parameters": {
+          "col_a": {
+            "label": "Minimum Age Column",
+            "description": "Column from which to get the minimum age value.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "integer",
+                "double"
+              ],
+              "validation": "required"
+            }
+          },
+          "col_b": {
+            "label": "Maximum Age Column",
+            "description": "Column from which to get the maximum age value.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "integer",
+                "double"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "add_group": {
+        "label": "Create Buckets",
+        "description": "Add new group with conditions.",
+        "category": "conditional",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to extract buckets. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "integer",
+                "double"
+              ],
+              "validation": "required"
+            }
+          },
+          "conditions": {
+            "label": "Buckets",
+            "description": "Buckets created from input column",
+            "type": "bucket_clauses",
+            "facets": {
+              "multiple": true,
+              "filter": null,
+              "validation": "required"
+            },
+            "inner_parameters": {
+              "interval": {
+                "label": "Interval",
+                "description": "The interval, written in one of the following 4 ways: (1) dash between numbers e.g. 3-5, (2) less than, e.g. <3, (3) more than, e.g. >5, (4) other (use exact word). Malformed intervals are ignored.",
+                "type": "string",
+                "parent_parameter": null,
+                "facets": {
+                  "multiple": false,
+                  "filter": null,
+                  "validation": "required"
+                }
+              },
+              "new_value": {
+                "label": "New value",
+                "description": "The corresponding value for the selected interval",
+                "type": "string",
+                "parent_parameter": null,
+                "facets": {
+                  "multiple": false,
+                  "filter": null,
+                  "validation": "required"
+                }
+              }
+            }
+          }
+        }
+      },
+      "lag_x": {
+        "label": "Lag",
+        "description": "Get the value at 'offset' rows before the current row in the window (as defined by the 'Order Column').",
+        "category": "shift",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column whose values to shift.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": null,
+              "validation": "required"
+            }
+          },
+          "val": {
+            "label": "Offset",
+            "description": "Offset by which to shift rows.",
+            "type": "numeric",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "integer"
+              ],
+              "validation": "required|integer"
+            }
+          },
+          "partition_col": {
+            "label": "Partition Column (Group-by)",
+            "description": "Column to use to partition (group) the rows before shifting.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": null,
+              "validation": null
+            }
+          },
+          "order_col": {
+            "label": "Order Column",
+            "description": "Column to use to order the rows in ascending order (inside each partition) before shifting.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": null,
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "lead_x": {
+        "label": "Lead",
+        "description": "Get the value at 'offset' rows after the current row in the window (as defined by the 'Order Column').",
+        "category": "shift",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column whose values to shift.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": null,
+              "validation": "required"
+            }
+          },
+          "val": {
+            "label": "Offset",
+            "description": "Offset by which to shift rows.",
+            "type": "numeric",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "integer"
+              ],
+              "validation": "required|integer"
+            }
+          },
+          "partition_col": {
+            "label": "Partition Column (Group-by)",
+            "description": "Column to use to partition (group) the rows before shifting.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": null,
+              "validation": null
+            }
+          },
+          "order_col": {
+            "label": "Order Column",
+            "description": "Column to use to order the rows in ascending order (inside each partition) before shifting.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": null,
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "simple_count": {
+        "label": "Count",
+        "description": "Count rows partitioned by a column.",
+        "category": "agg",
+        "parameters": {
+          "partition_col": {
+            "label": "Partition Column",
+            "description": "Column by which to partition the rows.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": null,
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "monthly_count": {
+        "label": "Count - Monthly",
+        "description": "Count rows partitioned by month",
+        "category": "agg",
+        "parameters": {
+          "partition_col": {
+            "label": "Partition Column",
+            "description": "Column used to extract the month information. Showing only date/datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime",
+                "date"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "daily_count": {
+        "label": "Count - Daily",
+        "description": "Count rows partitioned by date (i.e. same day, month and year)",
+        "category": "agg",
+        "parameters": {
+          "partition_col": {
+            "label": "Partition Column",
+            "description": "Column used to extract the day information. Showing only date/datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime",
+                "date"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "hourly_count": {
+        "label": "Count - Hourly",
+        "description": "Count rows partitioned by hour (e.g. 3:15 and 3:45 are rounded to 3)",
+        "category": "agg",
+        "parameters": {
+          "partition_col": {
+            "label": "Partition Column",
+            "description": "Column used to extract the time information. Showing only datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "corrected_hourly_count": {
+        "label": "Count - Hourly (corrected)",
+        "description": "Count rows partitioned by hour (e.g. 3:15 is rounded to 3, but 3:45 to 4)",
+        "category": "agg",
+        "parameters": {
+          "partition_col": {
+            "label": "Partition Column",
+            "description": "Column used to extract the time information. Showing only datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "simple_sum": {
+        "label": "Sum",
+        "description": "Get sum of values in a given column partitioned by another column.",
+        "category": "agg",
+        "parameters": {
+          "sum_col": {
+            "label": "Input Column",
+            "description": "Column to compute sum on. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "integer",
+                "double"
+              ],
+              "validation": "required"
+            }
+          },
+          "partition_col": {
+            "label": "Partition Column",
+            "description": "Column by which to partition the rows.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": null,
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "monthly_sum": {
+        "label": "Sum - Monthly",
+        "description": "Get sum of values in a given column partitioned by month",
+        "category": "agg",
+        "parameters": {
+          "sum_col": {
+            "label": "Input Column",
+            "description": "Column to compute sum on. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "integer",
+                "double"
+              ],
+              "validation": "required"
+            }
+          },
+          "partition_col": {
+            "label": "Partition Column",
+            "description": "Column used to extract the month information. Showing only date/datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime",
+                "date"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "daily_sum": {
+        "label": "Sum - Daily",
+        "description": "Get sum of values in a given column partitioned by date (day, month, year)",
+        "category": "agg",
+        "parameters": {
+          "sum_col": {
+            "label": "Input Column",
+            "description": "Column to compute sum on. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "integer",
+                "double"
+              ],
+              "validation": "required"
+            }
+          },
+          "partition_col": {
+            "label": "Partition Column",
+            "description": "Column used to extract the day information. Showing only date/datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime",
+                "date"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "hourly_sum": {
+        "label": "Sum - Hourly",
+        "description": "Get sum of values in a given column partitioned by hour (e.g. 3:15 and 3:45 are rounded to 3)",
+        "category": "agg",
+        "parameters": {
+          "sum_col": {
+            "label": "Input Column",
+            "description": "Column to compute sum on. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "integer",
+                "double"
+              ],
+              "validation": "required"
+            }
+          },
+          "partition_col": {
+            "label": "Partition Column",
+            "description": "Column used to extract the time information. Showing only datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "corrected_hourly_sum": {
+        "label": "Sum - Hourly (corrected)",
+        "description": "Get sum of values in a given column partitioned by hour (e.g. 3:15 is rounded to 3, but 3:45 to 4)",
+        "category": "agg",
+        "parameters": {
+          "sum_col": {
+            "label": "Input Column",
+            "description": "Column to compute sum on. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "integer",
+                "double"
+              ],
+              "validation": "required"
+            }
+          },
+          "partition_col": {
+            "label": "Partition Column",
+            "description": "Datetime column used to extract the time information. Showing only datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "simple_avg": {
+        "label": "Average",
+        "description": "Get average value of a given column partitioned by another column.",
+        "category": "agg",
+        "parameters": {
+          "avg_col": {
+            "label": "Input Column",
+            "description": "Column to compute average on. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "integer",
+                "double"
+              ],
+              "validation": "required"
+            }
+          },
+          "partition_col": {
+            "label": "Partition Column",
+            "description": "Column by which to partition the rows.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": null,
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "monthly_avg": {
+        "label": "Average - Monthly",
+        "description": "Get average value of a given column partitioned by month",
+        "category": "agg",
+        "parameters": {
+          "avg_col": {
+            "label": "Input Column",
+            "description": "Column to compute average on. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "integer",
+                "double"
+              ],
+              "validation": "required"
+            }
+          },
+          "partition_col": {
+            "label": "Partition Column",
+            "description": "Column used to extract the month information. Showing only date/datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime",
+                "date"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "daily_avg": {
+        "label": "Average - Daily",
+        "description": "Get average value of a given column partitioned by date (i.e. same day, month and year)",
+        "category": "agg",
+        "parameters": {
+          "avg_col": {
+            "label": "Input Column",
+            "description": "Column to compute average on. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "integer",
+                "double"
+              ],
+              "validation": "required"
+            }
+          },
+          "partition_col": {
+            "label": "Partition Column",
+            "description": "Column used to extract the day information. Showing only date/datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime",
+                "date"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "hourly_avg": {
+        "label": "Average - Hourly",
+        "description": "Get average value of a given column partitioned by hour (e.g. 3:15 and 3:45 are rounded to 3)",
+        "category": "agg",
+        "parameters": {
+          "avg_col": {
+            "label": "Input Column",
+            "description": "Column to compute average on. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "integer",
+                "double"
+              ],
+              "validation": "required"
+            }
+          },
+          "partition_col": {
+            "label": "Partition Column",
+            "description": "Column used to extract the time information. Showing only datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "corrected_hourly_avg": {
+        "label": "Average - Hourly (corrected)",
+        "description": "Get average value of a given column partitioned by hour (e.g. 3:15 is rounded to 3, but 3:45 to 4)",
+        "category": "agg",
+        "parameters": {
+          "avg_col": {
+            "label": "Input Column",
+            "description": "Column to compute average on. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "integer",
+                "double"
+              ],
+              "validation": "required"
+            }
+          },
+          "partition_col": {
+            "label": "Partition Column",
+            "description": "Column used to extract the hour information. Showing only datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "datetime"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "concatenate": {
+        "label": "Concatenate",
+        "description": "Concatenate two columns. Non-string values will be cast to string before concatenation.",
+        "category": "string",
+        "parameters": {
+          "col_a": {
+            "label": "Left Column",
+            "description": "Column whose values will be placed on the left side of the concatenated value.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [],
+              "validation": "required"
+            }
+          },
+          "col_b": {
+            "label": "Right Column",
+            "description": "Column whose values will be placed on the right side of the concatenated value.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [],
+              "validation": "required"
+            }
+          },
+          "separator": {
+            "label": "Separator",
+            "description": "Character to be used as separator between the concatenated values. Use \\s for space character.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": null
+            }
+          }
+        }
+      },
+      "lowercase": {
+        "label": "Lowercase",
+        "description": "Convert to lowercase.",
+        "category": "string",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column whose values to convert to lowercase. Showing only string columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "uppercase": {
+        "label": "Uppercase",
+        "description": "Convert to uppercase.",
+        "category": "string",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column whose values to convert to uppercase. Showing only string columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "ltrim": {
+        "label": "Ltrim",
+        "description": "Remove leading whitespace.",
+        "category": "string",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column whose values to remove leading whitespace from. Showing only string columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "rtrim": {
+        "label": "Rtrim",
+        "description": "Remove trailing whitespace.",
+        "category": "string",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column whose values to remove trailing whitespace from. Showing only string columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "trim": {
+        "label": "Trim",
+        "description": "Remove leading and trailing whitespace.",
+        "category": "string",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column whose values to remove leading and trailing whitespace from. Showing only string columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "force_cast_to_integer": {
+        "label": "Force Cast to Integer",
+        "description": "Remove non-numeric characters and cast value to integer.",
+        "category": "string",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column whose values to force cast to integer. Showing only string columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "force_cast_to_bigint": {
+        "label": "Force Cast to BigInteger",
+        "description": "Remove non-numeric characters and cast value to bigint.",
+        "category": "string",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column whose values to force cast to bigint. Showing only string columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "force_cast_to_double": {
+        "label": "Force Cast to Double",
+        "description": "Remove non-numeric characters apart from the 1st apperence of '.' and cast value to double.",
+        "category": "string",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column whose values to force cast to double. Showing only string columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "cast_to_integer": {
+        "label": "Cast to Integer",
+        "description": "Attempt to cast value to integer. If not possible, the result will be null.",
+        "category": "string",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column whose values to cast to integer. Showing only string columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "cast_to_bigint": {
+        "label": "Cast to BigInteger",
+        "description": "Attempt to cast value to bigint. If not possible, the result will be null.",
+        "category": "string",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column whose values to cast to bigint. Showing only string columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "cast_to_double": {
+        "label": "Cast to Double",
+        "description": "Attempt to cast value to double. If not possible, the result will be null.",
+        "category": "string",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column whose values to cast to double. Showing only string columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      }
+    },
+    "facets": {
+      "multiple": true,
+      "allow_next": true
+    }
+  },
+  "drop": {
+    "label": "Drop rows/columns",
+    "description": "Drop columns/rows.",
+    "output": null,
+    "validation": "No idea what you want me to do here!!!!!",
+    "functions": {
+      "drop": {
+        "label": "Drop Columns",
+        "description": "Drop columns from the dataset",
+        "category": null,
+        "parameters": {
+          "dropped": {
+            "label": "Columns",
+            "description": "Select column(s) to drop. Selected columns will be permanently removed from the virtual dataset under creation.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": true,
+              "filter": null,
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "dropna": {
+        "label": "Drop Rows if Null",
+        "description": "Drop rows for which the selected column has null values.",
+        "category": null,
+        "parameters": {
+          "col_a": {
+            "label": "Column",
+            "description": "Column to check for null",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": null,
+              "validation": "required"
+            }
+          }
+        }
+      }
+    },
+    "facets": {
+      "multiple": false,
+      "allow_next": true
+    }
+  },
+  "rename": {
+    "label": "Rename column",
+    "description": "Rename column.",
+    "output": "Provide a new title for the column",
+    "validation": "No idea what you want me to do here!!!!!",
+    "functions": {
+      "rename_cols": {
+        "label": "Rename Column",
+        "description": "Rename a column.",
+        "category": null,
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column to be renamed",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": null,
+              "validation": "required"
+            }
+          }
+        }
+      }
+    },
+    "facets": {
+      "multiple": true,
+      "allow_next": false
+    }
+  },
+  "merge": {
+    "label": "Join Datasets",
+    "description": "Join current dataset with other datasets.",
+    "output": null,
+    "validation": "No idea what you want me to do here!!!!!",
+    "functions": {
+      "join": {
+        "label": "Join/Merge",
+        "description": "Join current dataset with another dataset.",
+        "category": null,
+        "parameters": {
+          "join_type": {
+            "label": "Type",
+            "description": "Type of join to perform",
+            "type": "enum",
+            "parent_parameter": null,
+            "options": [
+              "inner join",
+              "join",
+              "left outer join",
+              "left join",
+              "right outer join",
+              "right join",
+              "full outer join",
+              "full join",
+              "cross join"
+            ],
+            "facets": {
+              "multiple": false,
+              "filter": null,
+              "validation": "required"
+            }
+          },
+          "dataset_a_columns": {
+            "label": "Current Dataset Columns",
+            "description": "Columns of current dataset (dataset A) that should be kept in the merge result",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": true,
+              "filter": null,
+              "validation": "required"
+            }
+          },
+          "dataset_b": {
+            "label": "Dataset B",
+            "description": "Dataset with which to join/merge the current one",
+            "type": "dataset",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": null,
+              "validation": "required"
+            }
+          },
+          "dataset_b_columns": {
+            "label": "Dataset B Columns",
+            "description": "Columns of dataset B that should be kept in the merge result",
+            "type": "column",
+            "parent_parameter": "dataset_b",
+            "facets": {
+              "multiple": true,
+              "filter": null,
+              "validation": "required"
+            }
+          },
+          "conditions": {
+            "label": "Conditions",
+            "description": "Join conditions (column equality)",
+            "type": "join_datasets",
+            "facets": {
+              "multiple": true,
+              "filter": null,
+              "validation": "required"
+            },
+            "inner_parameters": {
+              "dataset_a_column": {
+                "label": "Dataset A Column",
+                "description": "Dataset A column to use in merge condition",
+                "type": "column",
+                "parent_parameter": null,
+                "facets": {
+                  "multiple": false,
+                  "filter": null,
+                  "validation": "required_if:join_type,inner join,join,left outer join,left join,right outer join,right join,full outer join,full join"
+                }
+              },
+              "dataset_b_column": {
+                "label": "Dataset B Column",
+                "description": "Dataset B column to use in merge condition",
+                "type": "column",
+                "parent_parameter": "dataset_b",
+                "facets": {
+                  "multiple": false,
+                  "filter": null,
+                  "validation": "required_if:join_type,inner join,join,left outer join,left join,right outer join,right join,full outer join,full join"
+                }
+              }
+            }
+          }
+        }
+      },
+      "append_datasets": {
+        "label": "Append Datasets",
+        "description": "Append another dataset to the current one. Column names & types must match!",
+        "category": null,
+        "parameters": {
+          "dataset_b": {
+            "label": "Dataset B",
+            "description": "Dataset to append after the current one",
+            "type": "dataset",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": null,
+              "validation": "required"
+            }
+          }
+        }
+      }
+    },
+    "facets": {
+      "multiple": false,
+      "allow_next": true
+    }
+  },
+  "filter_and": {
+    "label": "Filter rows",
+    "description": "Define and apply filters to control which rows to keep.",
+    "output": null,
+    "validation": "No idea what you want me to do here!!!!!",
+    "functions": {
+      "num_comparison_col": {
+        "label": "Column-Column Comparison",
+        "description": "Numeric Comparison: Keep rows for which the defined comparison evaluates to true.",
+        "category": "numeric",
+        "parameters": {
+          "col_a": {
+            "label": "Column A",
+            "description": "Column used on the left-hand side of the comparison. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "double",
+                "integer"
+              ],
+              "validation": "required"
+            }
+          },
+          "operator": {
+            "label": "Operator",
+            "description": "Comparison operator to apply between the two columns.",
+            "type": "enum",
+            "parent_parameter": null,
+            "options": [
+              "greater than",
+              "greater than or equal",
+              "less than",
+              "less than or equal",
+              "equal",
+              "not equal"
+            ],
+            "facets": {
+              "multiple": false,
+              "filter": null,
+              "validation": "required"
+            }
+          },
+          "col_b": {
+            "label": "Column B",
+            "description": "Column used on the right-hand side of the comparison. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "double",
+                "integer"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "num_comparison_val": {
+        "label": "Column-Value Comparison",
+        "description": "Numeric Comparison: Keep rows for which the defined comparison evaluates to true.",
+        "category": "numeric",
+        "parameters": {
+          "col_a": {
+            "label": "Column",
+            "description": "Column used on the left-hand side of the comparison. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "double",
+                "integer"
+              ],
+              "validation": "required"
+            }
+          },
+          "operator": {
+            "label": "Operator",
+            "description": "Comparison operator to apply between the selected column and value.",
+            "type": "enum",
+            "parent_parameter": null,
+            "options": [
+              "greater than",
+              "greater than or equal",
+              "less than",
+              "less than or equal",
+              "equal",
+              "not equal"
+            ],
+            "facets": {
+              "multiple": false,
+              "filter": null,
+              "validation": "required"
+            }
+          },
+          "val": {
+            "label": "Value",
+            "description": "Value with which to compare the column values.",
+            "type": "numeric",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "double",
+                "integer"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "str_equal_col": {
+        "label": "Column-Column Equality",
+        "description": "String Equality: Keep rows for which the two columns have the same value.",
+        "category": "string",
+        "parameters": {
+          "col_a": {
+            "label": "Column A",
+            "description": "Column used on the left-hand side of the comparison. Showing only string columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "col_b": {
+            "label": "Column B",
+            "description": "Column used on the right-hand side of the comparison. Showing only string columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "str_not_equal_col": {
+        "label": "Column-Column Inequality",
+        "description": "String Inequality: Keep rows for which the two columns have different values.",
+        "category": "string",
+        "parameters": {
+          "col_a": {
+            "label": "Column A",
+            "description": "Column used on the left-hand side of the comparison. Showing only string columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "col_b": {
+            "label": "Column B",
+            "description": "Column used on the right-hand side of the comparison. Showing only string columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "str_equal_val": {
+        "label": "Column-Value Equality",
+        "description": "String Equality: Keep rows for which the specified columns has the specified value.",
+        "category": "string",
+        "parameters": {
+          "col_a": {
+            "label": "Column",
+            "description": "Column used on the left-hand side of the comparison. Showing only string columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "val": {
+            "label": "Value",
+            "description": "Value used on the right-hand side of the comparison.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "str_not_equal_val": {
+        "label": "Column-Value Inequality",
+        "description": "String Inequality: Keep rows for which the specified column has different value than the one specified.",
+        "category": "string",
+        "parameters": {
+          "col_a": {
+            "label": "Column",
+            "description": "Column used on the left side of the comparison. Showing only string columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "val": {
+            "label": "Value",
+            "description": "Value used on the right-hand side of the comparison.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "time_comparison_col": {
+        "label": "Column-Column Comparison",
+        "description": "Time Comparison: Keep rows for which the defined comparison evaluates to true.",
+        "category": "time",
+        "parameters": {
+          "col_a": {
+            "label": "Column A",
+            "description": "Column used on the left-hand side of the comparison. Showing only date/datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "date",
+                "datetime"
+              ],
+              "validation": "required"
+            }
+          },
+          "operator": {
+            "label": "Operator",
+            "description": "Comparison operator to apply between the two columns.",
+            "type": "enum",
+            "parent_parameter": null,
+            "options": [
+              "greater than",
+              "greater than or equal",
+              "less than",
+              "less than or equal",
+              "equal",
+              "not equal"
+            ],
+            "facets": {
+              "multiple": false,
+              "filter": null,
+              "validation": "required"
+            }
+          },
+          "col_b": {
+            "label": "Column",
+            "description": "Column used on the right-hand side of the comparison. Showing only date/datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "date",
+                "datetime"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "time_comparison_val_timestamp_noconvert": {
+        "label": "Column-Value Comparison",
+        "description": "Time Comparison: Keep rows for which the defined comparison evaluates to true.",
+        "category": "time",
+        "parameters": {
+          "col_a": {
+            "label": "Column",
+            "description": "Column used on the left-hand side of the comparison. Showing only date/datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "date",
+                "datetime"
+              ],
+              "validation": "required"
+            }
+          },
+          "operator": {
+            "label": "Operator",
+            "description": "Comparison operator to apply between the selected column and value.",
+            "type": "enum",
+            "parent_parameter": null,
+            "options": [
+              "greater than",
+              "greater than or equal",
+              "less than",
+              "less than or equal",
+              "equal",
+              "not equal"
+            ],
+            "facets": {
+              "multiple": false,
+              "filter": null,
+              "validation": "required"
+            }
+          },
+          "val": {
+            "label": "Value",
+            "description": "Value with which to compare the column values.",
+            "type": "datetime",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "date",
+                "datetime"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      }
+    },
+    "facets": {
+      "multiple": true,
+      "allow_next": true
+    }
+  },
+  "filter_or": {
+    "label": "Filter rows",
+    "description": "Define and apply filters to control which rows to keep.",
+    "output": null,
+    "validation": "No idea what you want me to do here!!!!!",
+    "functions": {
+      "num_comparison_col": {
+        "label": "Column-Column Comparison",
+        "description": "Numeric Comparison: Keep rows for which the defined comparison evaluates to true.",
+        "category": "numeric",
+        "parameters": {
+          "col_a": {
+            "label": "Column A",
+            "description": "Column used on the left-hand side of the comparison. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "double",
+                "integer"
+              ],
+              "validation": "required"
+            }
+          },
+          "operator": {
+            "label": "Operator",
+            "description": "Comparison operator to apply between the two columns.",
+            "type": "enum",
+            "parent_parameter": null,
+            "options": [
+              "greater than",
+              "greater than or equal",
+              "less than",
+              "less than or equal",
+              "equal",
+              "not equal"
+            ],
+            "facets": {
+              "multiple": false,
+              "filter": null,
+              "validation": "required"
+            }
+          },
+          "col_b": {
+            "label": "Column B",
+            "description": "Column used on the right-hand side of the comparison. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "double",
+                "integer"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "num_comparison_val": {
+        "label": "Column-Value Comparison",
+        "description": "Numeric Comparison: Keep rows for which the defined comparison evaluates to true.",
+        "category": "numeric",
+        "parameters": {
+          "col_a": {
+            "label": "Column",
+            "description": "Column used on the left-hand side of the comparison. Showing only numeric columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "double",
+                "integer"
+              ],
+              "validation": "required"
+            }
+          },
+          "operator": {
+            "label": "Operator",
+            "description": "Comparison operator to apply between the selected column and value.",
+            "type": "enum",
+            "parent_parameter": null,
+            "options": [
+              "greater than",
+              "greater than or equal",
+              "less than",
+              "less than or equal",
+              "equal",
+              "not equal"
+            ],
+            "facets": {
+              "multiple": false,
+              "filter": null,
+              "validation": "required"
+            }
+          },
+          "val": {
+            "label": "Value",
+            "description": "Value with which to compare the column values.",
+            "type": "numeric",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "double",
+                "integer"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "str_equal_col": {
+        "label": "Column-Column Equality",
+        "description": "String Equality: Keep rows for which the two columns have the same value.",
+        "category": "string",
+        "parameters": {
+          "col_a": {
+            "label": "Column A",
+            "description": "Column used on the left-hand side of the comparison. Showing only string columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "col_b": {
+            "label": "Column B",
+            "description": "Column used on the right-hand side of the comparison. Showing only string columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "str_not_equal_col": {
+        "label": "Column-Column Inequality",
+        "description": "String Inequality: Keep rows for which the two columns have different values.",
+        "category": "string",
+        "parameters": {
+          "col_a": {
+            "label": "Column A",
+            "description": "Column used on the left-hand side of the comparison. Showing only string columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "col_b": {
+            "label": "Column B",
+            "description": "Column used on the right-hand side of the comparison. Showing only string columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "str_equal_val": {
+        "label": "Column-Value Equality",
+        "description": "String Equality: Keep rows for which the specified columns has the specified value.",
+        "category": "string",
+        "parameters": {
+          "col_a": {
+            "label": "Column",
+            "description": "Column used on the left-hand side of the comparison. Showing only string columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "val": {
+            "label": "Value",
+            "description": "Value used on the right-hand side of the comparison.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "str_not_equal_val": {
+        "label": "Column-Value Inequality",
+        "description": "String Inequality: Keep rows for which the specified column has different value than the one specified.",
+        "category": "string",
+        "parameters": {
+          "col_a": {
+            "label": "Column",
+            "description": "Column used on the left side of the comparison. Showing only string columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "val": {
+            "label": "Value",
+            "description": "Value used on the right-hand side of the comparison.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "time_comparison_col": {
+        "label": "Column-Column Comparison",
+        "description": "Time Comparison: Keep rows for which the defined comparison evaluates to true.",
+        "category": "time",
+        "parameters": {
+          "col_a": {
+            "label": "Column A",
+            "description": "Column used on the left-hand side of the comparison. Showing only date/datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "date",
+                "datetime"
+              ],
+              "validation": "required"
+            }
+          },
+          "operator": {
+            "label": "Operator",
+            "description": "Comparison operator to apply between the two columns.",
+            "type": "enum",
+            "parent_parameter": null,
+            "options": [
+              "greater than",
+              "greater than or equal",
+              "less than",
+              "less than or equal",
+              "equal",
+              "not equal"
+            ],
+            "facets": {
+              "multiple": false,
+              "filter": null,
+              "validation": "required"
+            }
+          },
+          "col_b": {
+            "label": "Column",
+            "description": "Column used on the right-hand side of the comparison. Showing only date/datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "date",
+                "datetime"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "time_comparison_val_timestamp_noconvert": {
+        "label": "Column-Value Comparison",
+        "description": "Time Comparison: Keep rows for which the defined comparison evaluates to true.",
+        "category": "time",
+        "parameters": {
+          "col_a": {
+            "label": "Column",
+            "description": "Column used on the left-hand side of the comparison. Showing only date/datetime columns.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "date",
+                "datetime"
+              ],
+              "validation": "required"
+            }
+          },
+          "operator": {
+            "label": "Operator",
+            "description": "Comparison operator to apply between the selected column and value.",
+            "type": "enum",
+            "parent_parameter": null,
+            "options": [
+              "greater than",
+              "greater than or equal",
+              "less than",
+              "less than or equal",
+              "equal",
+              "not equal"
+            ],
+            "facets": {
+              "multiple": false,
+              "filter": null,
+              "validation": "required"
+            }
+          },
+          "val": {
+            "label": "Value",
+            "description": "Value with which to compare the column values.",
+            "type": "datetime",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "date",
+                "datetime"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      }
+    },
+    "facets": {
+      "multiple": true,
+      "allow_next": true
+    }
+  },
+  "aggregate": {
+    "label": "Compute aggregations",
+    "description": "Compute aggregations - standard statistics (average, count, sum).",
+    "output": null,
+    "validation": "No idea what you want me to do here!!!!!",
+    "functions": {
+      "count": {
+        "label": "Count",
+        "description": "Compute row count grouped by selected columns.",
+        "category": null,
+        "parameters": {
+          "out_col": {
+            "label": "Output",
+            "description": "Title for the result field.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          },
+          "group_by_col": {
+            "label": "Group by",
+            "description": "Column(s) to group computations.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": true,
+              "filter": null,
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "sum": {
+        "label": "Sum",
+        "description": "Compute sum of column values grouped by selected columns.",
+        "category": null,
+        "parameters": {
+          "out_col": {
+            "label": "Output",
+            "description": "Title for the result field.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          },
+          "group_by_col": {
+            "label": "Group by",
+            "description": "Column(s) to group computations.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": true,
+              "filter": null,
+              "validation": "required"
+            }
+          },
+          "sum_col": {
+            "label": "Input Column",
+            "description": "Column on which to compute sum.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "integer",
+                "double"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "avg": {
+        "label": "Average",
+        "description": "Compute average column value grouped by selected columns.",
+        "category": null,
+        "parameters": {
+          "out_col": {
+            "label": "Output",
+            "description": "Title for the result field.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          },
+          "group_by_col": {
+            "label": "Group by",
+            "description": "Column(s) to group computations.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": true,
+              "filter": null,
+              "validation": "required"
+            }
+          },
+          "avg_col": {
+            "label": "Input Column",
+            "description": "Column on which to compute average.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "integer",
+                "double"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "multi_agg": {
+        "label": "Multiple Aggregations",
+        "description": "Compute available aggregations over multiple columns grouped by selected columns.",
+        "category": null,
+        "parameters": {
+          "functions": {
+            "label": "Functions",
+            "description": "Aggregations to compute.",
+            "type": "enum",
+            "options": [
+              "average",
+              "count",
+              "sum",
+              "minimum",
+              "maximum"
+            ],
+            "parent_parameter": null,
+            "facets": {
+              "multiple": true,
+              "filter": null,
+              "validation": "required"
+            }
+          },
+          "selected_cols": {
+            "label": "Columns",
+            "description": "Columns on which to compute aggregations.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": true,
+              "filter": [
+                "integer",
+                "double"
+              ],
+              "validation": "required"
+            }
+          },
+          "group_by_col": {
+            "label": "Group by",
+            "description": "Column(s) to group computations.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": true,
+              "filter": null,
+              "validation": "required"
+            }
+          },
+          "suffix": {
+            "label": "Suffix",
+            "description": "To avoid duplicate column names, all created columns will have this suffix.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "facets": {
+      "multiple": false,
+      "allow_next": false
+    }
+  },
+  "fillna": {
+    "label": "Fill null values",
+    "description": "Fill null values.",
+    "output": null,
+    "validation": "No idea what you want me to do here!!!!!",
+    "functions": {
+      "fillna_string": {
+        "label": "String Columns",
+        "description": "Fill null values of selected column.",
+        "category": null,
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column whose null values will be replaced.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "val": {
+            "label": "Value",
+            "description": "Value used to fill null values.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "fillna_number_val": {
+        "label": "Numeric Columns - Value Fill",
+        "description": "Fill null values of selected column.",
+        "category": null,
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column whose null values will be replaced.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "double",
+                "integer"
+              ],
+              "validation": "required"
+            }
+          },
+          "val": {
+            "label": "Value",
+            "description": "Value used to fill null values.",
+            "type": "numeric",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "double",
+                "integer"
+              ],
+              "validation": "required"
+            }
+          }
+        }
+      },
+      "fillna_number_stat": {
+        "label": "Numeric Columns - Statistic Fill",
+        "description": "Fill null values of selected column.",
+        "category": null,
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column whose null values will be replaced.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "double",
+                "integer"
+              ],
+              "validation": "required"
+            }
+          },
+          "type": {
+            "label": "Fill type",
+            "description": "Selected statistic that will be used to replace the null values.",
+            "type": "enum",
+            "parent_parameter": null,
+            "options": [
+              "avg",
+              "min",
+              "max"
+            ],
+            "facets": {
+              "multiple": false,
+              "filter": null,
+              "validation": "required"
+            }
+          }
+        }
+      }
+    },
+    "facets": {
+      "multiple": false,
+      "allow_next": false
+    }
+  },
+  "split_column": {
+    "label": "Split column",
+    "description": "Split a column in multiple columns.",
+    "output": null,
+    "validation": "No idea what you want me to do here!!!!!",
+    "functions": {
+      "split_rows_on_char": {
+        "label": "Split to rows",
+        "description": "Split contents of a column in multiple rows using selected separator character.",
+        "category": null,
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column whose values to split.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "separator": {
+            "label": "Separator",
+            "description": "Character to be used as separator. Use \\s for space character.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "newcol": {
+            "label": "Output Column",
+            "description": "Provide a title for the new column.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      },
+      "split_ranges": {
+        "label": "Split ranges",
+        "description": "Split contents of a column in two columns using selected separator. The name 'ranges' denotes that if the separator appears more than once, contents after the 2nd appearence will be ignored.",
+        "category": null,
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column whose values to split.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "separator": {
+            "label": "Separator",
+            "description": "Character to be used as separator. Use \\s for space character or \\t for tab character.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "newcol": {
+            "label": "Output Column",
+            "description": "Provide a title for the new column.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "facets": {
+      "multiple": false,
+      "allow_next": false
+    }
+  },
+  "enrich": {
+    "label": "Enrich",
+    "description": "Enrich dataset content.",
+    "validation": "No idea what you want me to do here!!!!!",
+    "output": null,
+    "functions": {
+      "country_2code": {
+        "label": "ISO-2 Code for Country Name",
+        "description": "Add a column with the ISO-2 country codes for the country names in the selected column.",
+        "category": "geospatial",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get the country name.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "newcol": {
+            "label": "Output Column",
+            "description": "Provide a title for the new column.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      },
+      "country_3code": {
+        "label": "ISO-3 Code for Country Name",
+        "description": "Add a column with the ISO-3 country codes for the country names in the selected column.",
+        "category": "geospatial",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get the country name.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "newcol": {
+            "label": "Output Column",
+            "description": "Provide a title for the new column.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      },
+      "country_lat": {
+        "label": "Latitude for Country",
+        "description": "Add a column with the average latitude for the country name in the selected column.",
+        "category": "geospatial",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get the country name.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "newcol": {
+            "label": "Output Column",
+            "description": "Provide a title for the new column.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      },
+      "country_lon": {
+        "label": "Longitude for Country",
+        "description": "Add a column with the average longitute for the country name in the selected column.",
+        "category": "geospatial",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get the country name.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "newcol": {
+            "label": "Output Column",
+            "description": "Provide a title for the new column.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      },
+      "2code_country": {
+        "label": "Country Name for ISO-2 Code",
+        "description": "Add a column with the country name that corresponds to the ISO-2 country code in the selected column.",
+        "category": "geospatial",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get the ISO-2 country code.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "newcol": {
+            "label": "Output Column",
+            "description": "Provide a title for the new column.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      },
+      "3code_country": {
+        "label": "Country Name for ISO-3 Code",
+        "description": "Add a column with the country name that corresponds to the ISO-3 country code in the selected column.",
+        "category": "geospatial",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get the ISO-3 country code.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "newcol": {
+            "label": "Output Column",
+            "description": "Provide a title for the new column.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      },
+      "2code_lat": {
+        "label": "Country Latitude for ISO-2 Code",
+        "description": "Add a column with the average latitude of the country that corresponds to the ISO-2 code in the selected column.",
+        "category": "geospatial",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get the ISO-2 country code.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "newcol": {
+            "label": "Output Column",
+            "description": "Provide a title for the new column.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      },
+      "2code_lon": {
+        "label": "Country Longitude for ISO-2 Code",
+        "description": "Add a column with the average longitude of the country that corresponds to the ISO-2 code in the selected column.",
+        "category": "geospatial",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get the ISO-2 country code.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "newcol": {
+            "label": "Output Column",
+            "description": "Provide a title for the new column.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      },
+      "3code_lat": {
+        "label": "Country Latitude for ISO-3 Code",
+        "description": "Add a column with the average latitude of the country that corresponds to the ISO-3 code in the selected column.",
+        "category": "geospatial",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get the ISO-3 country code.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "newcol": {
+            "label": "Output Column",
+            "description": "Provide a title for the new column.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      },
+      "3code_lon": {
+        "label": "Country Longitude for ISO-3 Code",
+        "description": "Add a column with the average longitude of the country that corresponds to the ISO-3 code in the selected column.",
+        "category": "geospatial",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get the ISO-3 country code.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "newcol": {
+            "label": "Output Column",
+            "description": "Provide a title for the new column.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      },
+      "continent_country": {
+        "label": "Continent to Countries",
+        "description": "Add a column with the country names of the continent in the selected column.",
+        "category": "geospatial",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get the continent name.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "newcol": {
+            "label": "Output Column",
+            "description": "Provide a title for the new column.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      },
+      "subregion_country": {
+        "label": "Subregion to Countries",
+        "description": "Add a column with the country names of the subregion in the selected column.",
+        "category": "geospatial",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get the subregion name.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "newcol": {
+            "label": "Output Column",
+            "description": "Provide a title for the new column.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      },
+      "regionwb_country": {
+        "label": "Region WB to Countries",
+        "description": "Add a column with the country names of the region_wb in the selected column.",
+        "category": "geospatial",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get the region_wb name.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "newcol": {
+            "label": "Output Column",
+            "description": "Provide a title for the new column.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      },
+      "country_continent": {
+        "label": "Country name to Continent",
+        "description": "Add a column with the continent name of the country in the selected column.",
+        "category": "geospatial",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get the country name.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "newcol": {
+            "label": "Output Column",
+            "description": "Provide a title for the new column.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      },
+      "country_subregion": {
+        "label": "Country name to Subregion",
+        "description": "Add a column with the subregion name of the country in the selected column.",
+        "category": "geospatial",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get the country name.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "newcol": {
+            "label": "Output Column",
+            "description": "Provide a title for the new column.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      },
+      "country_regionwb": {
+        "label": "Country name to Region WB",
+        "description": "Add a column with the region_wb name of the country in the selected column.",
+        "category": "geospatial",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get the country name.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "newcol": {
+            "label": "Output Column",
+            "description": "Provide a title for the new column.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      },
+      "carrier_iata_icao": {
+        "label": "Carrier IATA to ICAO",
+        "description": "Add a column with the ICAO carrier code that corresponds to the IATA carrier code in the selected column.",
+        "category": "aviation",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get the IATA carrier code.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "newcol": {
+            "label": "Output Column",
+            "description": "Provide a title for the new column.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      },
+      "carrier_icao_iata": {
+        "label": "Carrier ICAO to IATA",
+        "description": "Add a column with the IATA carrier code that corresponds to the ICAO carrier code in the selected column.",
+        "category": "aviation",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get the ICAO carrier code.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "newcol": {
+            "label": "Output Column",
+            "description": "Provide a title for the new column.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      },
+      "carrier_name_icao": {
+        "label": "Carrier name to ICAO",
+        "description": "Add a column with the ICAO carrier code that corresponds to the carrier name in the selected column.",
+        "category": "aviation",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get the carrier name.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "newcol": {
+            "label": "Output Column",
+            "description": "Provide a title for the new column.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      },
+      "carrier_name_iata": {
+        "label": "Carrier name to IATA",
+        "description": "Add a column with the IATA carrier code that corresponds to the carrier name in the selected column.",
+        "category": "aviation",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get the carrier name.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "newcol": {
+            "label": "Output Column",
+            "description": "Provide a title for the new column.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      },
+      "carrier_iata_name": {
+        "label": "Carrier IATA to name",
+        "description": "Add a column with the carrier name that corresponds to the IATA carrier code in the selected column.",
+        "category": "aviation",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get the IATA carrier code.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "newcol": {
+            "label": "Output Column",
+            "description": "Provide a title for the new column.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      },
+      "carrier_icao_name": {
+        "label": "Carrier ICAO to name",
+        "description": "Add a column with the carrier name that corresponds to the ICAO carrier code in the selected column.",
+        "category": "aviation",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get the ICAO carrier code.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "newcol": {
+            "label": "Output Column",
+            "description": "Provide a title for the new column.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      },
+      "airport_icao_iata": {
+        "label": "Airport ICAO to IATA",
+        "description": "Add a column with the IATA airport code that corresponds to the ICAO airport code in the selected column.",
+        "category": "aviation",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get the ICAO carrier code.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "newcol": {
+            "label": "Output Column",
+            "description": "Provide a title for the new column.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      },
+      "airport_iata_icao": {
+        "label": "Airport IATA to ICAO",
+        "description": "Add a column with the ICAO airport code that corresponds to the IATA airport code in the selected column.",
+        "category": "aviation",
+        "parameters": {
+          "col_a": {
+            "label": "Input Column",
+            "description": "Column from which to get the ICAO carrier code.",
+            "type": "column",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": "required"
+            }
+          },
+          "newcol": {
+            "label": "Output Column",
+            "description": "Provide a title for the new column.",
+            "type": "string",
+            "parent_parameter": null,
+            "facets": {
+              "multiple": false,
+              "filter": [
+                "string"
+              ],
+              "validation": {
+                "required": true,
+                "regex": "^[a-z_][a-z0-9_]*$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "facets": {
+      "multiple": false,
+      "allow_next": false
+    }
+  }
+}

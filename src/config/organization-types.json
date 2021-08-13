@@ -1,0 +1,94 @@
+[
+    {
+      "id": "Airlines",
+      "label": "Airlines"
+    },
+    {
+      "id": "Airports",
+      "label": "Airports"
+    },
+    {
+      "id": "Ground Handlers",
+      "label": "Ground Handlers"
+    },
+    {
+      "id": "OEM Manufacturers",
+      "label": "OEM Manufacturers"
+    },
+    {
+      "id": "Refuellers",
+      "label": "Refuellers"
+    },
+    {
+      "id": "Air Traffic Control",
+      "label": "Air Traffic Control"
+    },
+    {
+      "id": "Air Navigation Services providers",
+      "label": "Air Navigation Services providers"
+    },
+    {
+      "id": "Cargo Handling Agents",
+      "label": "Cargo Handling Agents"
+    },
+    {
+      "id": "UAV operators",
+      "label": "UAV operators"
+    },
+    {
+      "id": "Helicopters Operators",
+      "label": "Helicopters Operators"
+    },
+    {
+      "id": "Aircraft Leasing Companies",
+      "label": "Aircraft Leasing Companies"
+    },
+    {
+      "id": "International Aviation Organizations",
+      "label": "International Aviation Organizations"
+    },
+    {
+      "id": "National Aviation Authorities",
+      "label": "National Aviation Authorities"
+    },
+    {
+      "id": "Global Distribution Services (GDS) Providers",
+      "label": "Global Distribution Services (GDS) Providers"
+    },
+    {
+      "id": "Concessionaires",
+      "label": "Concessionaires"
+    },
+    {
+      "id": "Aviation-related Services Providers & Contractors",
+      "label": "Aviation-related Services Providers & Contractors"
+    },
+    {
+      "id": "OEM Suppliers",
+      "label": "OEM Suppliers"
+    },
+    {
+      "id": "Parking Operators",
+      "label": "Parking Operators"
+    },
+    {
+      "id": "Catering Suppliers",
+      "label": "Catering Suppliers"
+    },
+    {
+      "id": "Maintenance, repair, and overhaul (MRO) Providers",
+      "label": "Maintenance, repair, and overhaul (MRO) Providers"
+    },
+    {
+      "id": "Ground Support Equipment (GSE) Maintenance",
+      "label": "Ground Support Equipment (GSE) Maintenance"
+    },
+    {
+      "id": "Aviation Data Aggregators",
+      "label": "Aviation Data Aggregators"
+    },
+    {
+      "id": "Other",
+      "label": "Other"
+    }
+  ]
